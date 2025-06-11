@@ -10,6 +10,11 @@ class Article(BaseModel):
     text: str
 
 
+@app.get("/")
+def status_check():
+    return "Article Summarizer active."
+
+
 @app.post("/summarizer")
 def summarize(article: Article):
     try:
